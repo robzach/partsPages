@@ -1,0 +1,9 @@
+---
+layout: item
+number: 4988
+title:  A4988 stepper motor driver
+brief: Used to allow a microcontroller, like an Arduino, to drive a variety of types of stepper motors which are powered by a separate power supply.
+date:   2017-07-05
+datasheet: A4988datasheet.pdf
+purchaselink: https://www.ebay.com/p/A4988-Stepper-Motor-Driver-Module-for-RepRap-3d-Printer/1170050751?_trksid=p2047675.m4096.l9055
+---
