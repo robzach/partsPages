@@ -1,0 +1,6 @@
+num,binLocation,tags,name,brief,datasheetName,purchaseURL
+0122,B11-R5-C1,"Electronics, Sensors",GA1A12S202 analog light sensor,"GA1A12S202 analog light sensor, does not require a microcontroller, analog voltage output increases with the amount of light shining on the sensor face, a true log-lin relationship with light levels.",GA1A1S202WP_Spec.pdf,https://www.adafruit.com/product/1384
+0143,B11-R7-C6,"Electronics, Sensors",Soil Moisture Sensor,Soil Moisture Sensor is a simple breakout for measuring the moisture in soil and similar materials.,30282MPSch.pdf,http://www.mpja.com/07-20-17.asp?r=00000&s=11
+0158,B12-R1-C5,"Electronics, Power, Switches","Trimmer, Single Turn 3/8"" Square Cermet 10k, 0.5W",,,http://www.jameco.com/webapp/wcs/stores/servlet/Product_10001_10001_2118791_-1
+0421,B4-R3-C3,"Electronics, Power","regulator, 5V step-up voltage regulator, NCP1402",,NCP1402-D.pdf,http://www.pololu.com/product/798
+0655,B9-R5-C1,"Electronics, Motion",Oscillator,"Oscillator, IC Phase Lock Loop, CD4046BEE4 CMOS PLL/VCO: can be used as an oscillator, a frequency-to-voltage converter, and a tone/frequency detector",cd4046b.pdf,http://www.digikey.com/product-detail/en/CD4046BEE4/296-36086-5-ND/1691083
