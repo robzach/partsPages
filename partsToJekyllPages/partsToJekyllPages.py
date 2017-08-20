@@ -25,10 +25,16 @@ v. 0.3 8-8-17
 v. 0.31 8-20-17
     * reading multiple comma-delimited tags in one field and outputting appropriately
 
+v. 0.4 8-20-17
+    * added date field
+    * added single quotes around 'brief' entry since it may contain characters like : that would need escaping
+    * added single quotes around 'num' since leading with zero(s) was computed as an octal value
+
 """
 
 import csv
 import os.path
+from time import strftime
 
 with open('inventory.csv') as csvfile:
     rows = csv.reader(csvfile)
@@ -45,34 +51,26 @@ with open('inventory.csv') as csvfile:
         purchaseURL = row[6]
 
         tagList = tags.split(',')
-        print('tagList: ', tagList)
-
         if(len(tagList) > 0):
             formattedTagList = ''
             for tag in tagList:
-                formattedTagList += '\n\t- ' + tag.strip()
-
-        print('formattedTagList = ', formattedTagList)
+                formattedTagList += '\n    - ' + tag.strip()
+        
         
         frontMatter = \
 """---
 layout: item
-number: """ + num + """
+number: """ + '\'' + num + '\'' + """
 title: """ + name + """
 tags: """ + formattedTagList + """
-brief: """ + brief + """
+brief: """ + '\'' + brief + '\'' + """
 datasheet: """ + datasheetName + """
 purchaselink: """ + purchaseURL + """
+date: """ + strftime("%Y-%m-%d %H:%M:%S") + """
 ---
 """
         filename = num + '.md'
         f = open(filename, "w+")
         f.write(frontMatter)
         f.close()
-        print("just wrote " + filename + '\n\n\n')
-    
-
-        
-##    for row in rows:
-##        print(' | '.join(row))
-        
+        print("just wrote " + filename)
