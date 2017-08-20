@@ -22,6 +22,9 @@ v. 0.3 8-8-17
     * changed field headings to match CSV appropriately
     * outputting markdown documents
 
+v. 0.31 8-20-17
+    * reading multiple comma-delimited tags in one field and outputting appropriately
+
 """
 
 import csv
@@ -41,20 +44,32 @@ with open('inventory.csv') as csvfile:
         datasheetName = row[5]
         purchaseURL = row[6]
 
-        filename = num + '.md'
-        f = open(filename, "w+")
-        f.write(
+        tagList = tags.split(',')
+        print('tagList: ', tagList)
+
+        if(len(tagList) > 0):
+            formattedTagList = ''
+            for tag in tagList:
+                formattedTagList += '\n\t- ' + tag.strip()
+
+        print('formattedTagList = ', formattedTagList)
+        
+        frontMatter = \
 """---
 layout: item
 number: """ + num + """
 title: """ + name + """
+tags: """ + formattedTagList + """
 brief: """ + brief + """
 datasheet: """ + datasheetName + """
 purchaselink: """ + purchaseURL + """
 ---
-""")
+"""
+        filename = num + '.md'
+        f = open(filename, "w+")
+        f.write(frontMatter)
         f.close()
-        print("just wrote " + filename)
+        print("just wrote " + filename + '\n\n\n')
     
 
         
