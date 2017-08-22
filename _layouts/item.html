@@ -3,7 +3,7 @@ layout: default
 ---
 
 <div class="post-content">
-    <div class="wrapper">
+<!--    <div class="wrapper">-->
     
         <h1>{{page.title}}</h1>
 
@@ -39,10 +39,10 @@ layout: default
         <br><br>
         
         <small>
-            Data populating this page last updated {{ page.date | date: "%Y-%m-%e %H:%M:%S" | timezone: "America/New_York" }}
+            Data populating this page last updated {{ page.date | date: "%F %T %Z" | timezone: "America/New_York" }}
         <br>
-            Static HTML page last generated {{ "now" | date: "%Y-%m-%e %H:%M:%S" }}
+            Static HTML page last generated {{ "now" | date: "%F %T %Z" }}
         </small>
     
-    </div>
+<!--    </div>-->
 </div>
