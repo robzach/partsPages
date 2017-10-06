@@ -1,9 +1,0 @@
----
-layout: item
-number: 7805
-title:  5V voltage regulator
-brief: Takes an input voltage greater than 5V and turns it into a 5V output. This process is not especially efficient and some heat will be dissipated.
-date:   2017-07-05
-datasheet:
-purchaselink: 
----
